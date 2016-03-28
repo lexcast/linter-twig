@@ -1,4 +1,4 @@
-# Twit Linter
+# Twig Linter
 
 Before installing this package, you need  [asm89/twig-lint](https://github.com/asm89/twig-lint). Download it typing in your console:
 
