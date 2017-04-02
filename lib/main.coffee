@@ -7,20 +7,24 @@ module.exports =
       type: 'string'
       title: 'twig-lint Path'
       default: 'twig-lint'
+
   activate: ->
     require('atom-package-deps').install()
+
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.config.observe 'linter-twig.executablePath',
       (executablePath) =>
         @executablePath = executablePath
+
   deactivate: ->
     @subscriptions.dispose()
+
   provideLinter: ->
-    provider =
+    linter =
       name: 'Twig'
       grammarScopes: ['text.html.twig']
       scope: 'file'
-      lintOnFly: true
+      lintsOnChange: true
       lint: (textEditor) =>
         filePath = textEditor.getPath()
         command = @executablePath
@@ -35,8 +39,10 @@ module.exports =
             messages = []
             while((match = regex.exec(output)) isnt null)
               messages.push
-                type: 'Error'
+                severity: 'error'
                 filePath: filePath
-                range: helpers.rangeFromLineNumber(textEditor, match[1] - 1)
-                text: match[2]
+                location:
+                  file: filePath
+                  position: helpers.rangeFromLineNumber textEditor, match[1] - 1
+                excerpt: match[2]
             return messages
