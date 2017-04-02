@@ -4,12 +4,20 @@
 
 ## Requirements
 
-Before installing this package, you need [asm89/twig-lint](https://github.com/asm89/twig-lint).
-Download it typing in your console:
+Before installing this package, you need [asm89/twig-lint](https://github.com/asm89/twig-lint)
+installed and in your `$PATH`. Do the following:
+
+- Install PHP
+
+- Install Composer
+
+- Install [asm89/twig-lint](https://github.com/asm89/twig-lint)
 
 ```bash
 composer global require "asm89/twig-lint" "@dev"
 ```
+
+** IMPORTANT TO INSTALL THE DEV VERSION **
 
 ## Install
 
