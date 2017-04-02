@@ -33,16 +33,15 @@ module.exports =
         parameters.push('lint')
         parameters.push('--format=csv')
         parameters.push('--only-print-errors')
-        return helpers.exec(command, parameters , {stdin: text})
+        return helpers.exec(command, parameters, {stdin: text, ignoreExitCode: true})
           .then (output) ->
             regex = /(\d+),(.*)/g
             messages = []
             while((match = regex.exec(output)) isnt null)
               messages.push
                 severity: 'error'
-                filePath: filePath
                 location:
                   file: filePath
-                  position: helpers.rangeFromLineNumber textEditor, match[1] - 1
+                  position: helpers.generateRange(textEditor, match[1] - 1)
                 excerpt: match[2]
             return messages
