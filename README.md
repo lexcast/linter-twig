@@ -17,7 +17,7 @@ installed and in your `$PATH`. Do the following:
 composer global require "asm89/twig-lint" "@dev"
 ```
 
-** IMPORTANT TO INSTALL THE DEV VERSION **
+**IMPORTANT TO INSTALL THE DEV VERSION**
 
 ## Install
 
