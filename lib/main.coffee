@@ -9,7 +9,7 @@ module.exports =
       default: 'twig-lint'
 
   activate: ->
-    require('atom-package-deps').install()
+    require('atom-package-deps').install('linter-twig')
 
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.config.observe 'linter-twig.executablePath',
