@@ -1,5 +1,10 @@
 # Change Log
 
+## [v0.4.2](https://github.com/lexcast/linter-twig/tree/v0.4.2) (2017-04-12)
+[Full Changelog](https://github.com/lexcast/linter-twig/compare/v0.4.1...v0.4.2)
+
+- Minor performance on package activation calling `requestIdleCallback`
+
 ## [v0.4.1](https://github.com/lexcast/linter-twig/tree/v0.4.1) (2017-04-12)
 [Full Changelog](https://github.com/lexcast/linter-twig/compare/v0.4.0...v0.4.1)
 
