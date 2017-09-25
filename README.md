@@ -20,7 +20,9 @@ composer global require "asm89/twig-lint" "@dev"
 **IMPORTANT TO INSTALL THE DEV VERSION**
 
 ## Install
+From Atom go to Settings ➔ Install or with the command `Settings View:Install Packages and Themes` and then search for `linter-twig`
 
+Or with apm:
 ```bash
 apm install linter-twig
 ```
